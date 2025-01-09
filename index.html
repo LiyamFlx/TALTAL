@@ -3,243 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elevate Your Postpartum Practice</title>
+    <meta name="description" content="TALTAL - Your Healthcare Hub. Find and book appointments with trusted doctors easily.">
+    <title>TALTAL: Your Healthcare Hub | Find & Book Healthcare Appointments</title>
+    
+    <!-- Preload critical assets -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Reset */
-        * {
+        :root {
+            --primary-color: #4CAF50;
+            --text-color: #333;
+            --bg-light: #f8f9fa;
+            --white: #fff;
+            --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            --container-width: 1200px;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+        }
+
+        /* Modern CSS Reset */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background-color: #f8f9fa; 
+            background-color: var(--bg-light);
         }
 
-        /* Global Styles */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            cursor: pointer;
+            font: inherit;
+        }
+
         .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 2rem;
+            width: min(var(--container-width), 100% - var(--spacing-md));
+            margin-inline: auto;
+            padding: var(--spacing-lg) var(--spacing-md);
         }
 
-        /* Hero Section */
         .hero {
-            background-image: url('hero-image.jpg'); /* Replace with your actual image */
-            background-size: cover;
-            background-position: center;
-            color: #fff;
+            background-color: var(--primary-color);
+            color: var(--white);
             text-align: center;
-            padding: 10rem 0;
+            padding: clamp(4rem, 10vw, 8rem) 0;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 60ch;
+            margin-inline: auto;
+        }
+
+        .search-bar {
+            display: flex;
+            gap: var(--spacing-sm);
             max-width: 600px;
-            margin: 0 auto;
+            margin: var(--spacing-md) auto 0;
+            padding: 0 var(--spacing-sm);
         }
 
-        .hero-cta {
-            display: inline-block;
-            padding: 1.5rem 3rem;
-            background-color: #80CBC4; /* Teal */
-            color: #fff;
-            text-decoration: none;
+        .search-bar input {
+            flex: 1;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
             border-radius: 5px;
-            margin-top: 2rem;
-            transition: background-color 0.3s ease;
+            font: inherit;
         }
 
-        .hero-cta:hover {
-            background-color: #4DB6AC;
+        .search-button {
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: opacity 0.2s;
         }
 
-        /* Section Styles */
-        .section {
-            padding: 8rem 0;
+        .search-button:hover {
+            opacity: 0.9;
         }
 
-        .section-heading {
-            text-align: center;
-            margin-bottom: 4rem;
+        .features {
+            padding: var(--spacing-lg) 0;
         }
 
-        .section-heading h2 {
-            font-size: 2.5rem;
-            color: #333;
-        }
-
-        .section-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Services Section */
-        .services-grid {
+        .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 4rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
         }
 
-        .service {
-            background-color: #fff;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .feature {
             text-align: center;
+            padding: var(--spacing-md);
         }
 
-        .service h3 {
-            color: #80CBC4;
-            margin-bottom: 1.5rem;
+        .feature img {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto var(--spacing-sm);
         }
 
-        /* Testimonials Section */
         .testimonials {
-            background-color: #f8f9fa; 
+            background-color: var(--bg-light);
+            padding: var(--spacing-lg) 0;
         }
 
         .testimonial {
-            background-color: #fff;
-            padding: 3rem;
+            background-color: var(--white);
+            padding: var(--spacing-lg);
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 4rem 0;
+            box-shadow: var(--shadow);
+            margin: var(--spacing-lg) 0;
             text-align: center;
+            max-width: 800px;
+            margin-inline: auto;
         }
 
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: #80CBC4;
-        }
-
-        /* Contact Section */
-        .contact {
-            background-color: #80CBC4;
-            color: #fff;
+        .call-to-action {
+            background-color: var(--primary-color);
+            color: var(--white);
             text-align: center;
-            padding: 8rem 0;
+            padding: var(--spacing-lg) 0;
         }
 
-        .contact h2 {
-            color: #fff;
+        .cta-button {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: var(--spacing-md);
+            transition: transform 0.2s;
         }
 
-        /* Footer */
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
         footer {
-            background-color: #f0f0f0;
-            padding: 2rem 0;
+            background-color: var(--bg-light);
+            padding: var(--spacing-lg) 0;
             text-align: center;
+            margin-top: auto;
         }
 
-        @media screen and (max-width: 768px) {
-            .hero {
-                padding: 6rem 0;
+        /* Improved accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
             }
+        }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #f0f0f0;
+                --bg-light: #1a1a1a;
+                --white: #2a2a2a;
             }
         }
     </style>
 </head>
-<body>
 
+<body>
     <header class="hero">
         <div class="container">
-            <h1>Elevate Your Postpartum Practice</h1>
-            <p>Focus on nurturing families. We'll handle the operations.</p>
-            <a href="#contact" class="hero-cta">Schedule a Consultation</a>
+            <h1>TALTAL: Your Healthcare Hub</h1>
+            <p>Find, Book, & Go.</p>
+            <p>Book appointments with trusted doctors in one place.</p>
+            <form class="search-bar" role="search">
+                <input type="search" 
+                       placeholder="Search for doctors or specialties"
+                       aria-label="Search for doctors or specialties">
+                <button type="submit" class="search-button">Search</button>
+            </form>
         </div>
     </header>
 
     <main>
-        <section id="about" class="section">
+        <section class="features">
             <div class="container">
-                <div class="section-content">
-                    <h2>Free Yourself from Administrative Burdens</h2>
-                    <p>As a dedicated midwife, doula, or nursing agency, you're passionate about providing exceptional care. But administrative tasks can drain your time and energy. We offer tailored operational support solutions to streamline your workflows and empower you to focus on what matters most: your clients.</p>
+                <div class="feature-grid">
+                    <article class="feature">
+                        <img src="images/icon-search.svg" alt="" aria-hidden="true">
+                        <h2>Find the Right Doctor</h2>
+                        <p>Browse verified doctor profiles, read patient reviews, and find specialists in your area.</p>
+                    </article>
+                    <article class="feature">
+                        <img src="images/icon-calendar.svg" alt="" aria-hidden="true">
+                        <h2>Book Appointments Instantly</h2>
+                        <p>Schedule appointments that fit your schedule, 24/7.</p>
+                    </article>
+                    <article class="feature">
+                        <img src="images/icon-location.svg" alt="" aria-hidden="true">
+                        <h2>Access Healthcare Anywhere</h2>
+                        <p>Find doctors near you or book telemedicine consultations.</p>
+                    </article>
+                    <article class="feature">
+                        <img src="images/icon-shield.svg" alt="" aria-hidden="true">
+                        <h2>Secure and Reliable</h2>
+                        <p>Your data is safe and secure with our robust privacy measures.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="section">
+        <section class="testimonials">
             <div class="container">
-                <div class="section-heading">
-                    <h2>Our Solutions</h2>
-                </div>
-                <div class="services-grid">
-                    <div class="service">
-                        <h3>Streamlined Scheduling & Dispatch</h3>
-                        <p>Optimize nurse schedules, manage appointments efficiently, and ensure seamless communication.</p>
-                    </div>
-                    <div class="service">
-                        <h3>Effortless Billing & Invoicing</h3>
-                        <p>Automate billing processes, manage invoices with ease, and improve cash flow.</p>
-                    </div>
-                    <div class="service">
-                        <h3>Expert Client Onboarding & Support</h3>
-                        <p>Provide a smooth onboarding experience for new clients and offer ongoing support.</p>
-                    </div>
-                    <div class="service">
-                        <h3>Enhanced Client Communication</h3>
-                        <p>Improve communication with clients through automated reminders and updates.</p>
-                    </div>
-                </div>
+                <h2>What Our Users Say</h2>
+                <blockquote class="testimonial">
+                    <p>"Finding a good doctor was always a hassle. TALTAL made it so easy! I love how I can read reviews and book appointments online."</p>
+                    <footer>
+                        <cite>- John Doe</cite>
+                    </footer>
+                </blockquote>
             </div>
         </section>
 
-        <section id="testimonials" class="section testimonials">
+        <section class="call-to-action">
             <div class="container">
-                <div class="section-heading">
-                    <h2>What Our Partners Say</h2>
-                </div>
-                <div class="testimonial">
-                    <p>"Working with [Your Company Name] has been a game-changer. I can now focus on what I love most – providing personalized care to my clients – without the constant stress of administrative tasks."</p>
-                    <p class="testimonial-author">- Jane Doe, [Organization Name]</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section contact">
-            <div class="container">
-                <h2>Ready to Elevate Your Practice?</h2>
-                <p>Schedule a free consultation to discuss your specific needs.</p>
-                <a href="#contact" class="hero-cta">Schedule a Consultation</a>
+                <h2>Ready to Simplify Your Healthcare?</h2>
+                <a href="#" class="cta-button">Get Started Now</a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+            <p>&copy; <time datetime="2024">2024</time> TALTAL. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
 </html>
