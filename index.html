@@ -3,62 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elevate Postpartum Care</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Elevate Your Postpartum Practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Basic CSS Reset */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333333; background-color: #f9f9f9; padding: 20px; }
-        .container { max-width: 960px; margin: 20px auto; padding: 20px; background: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        h1, h2 { color: #333333; text-align: center; margin-bottom: 1rem; }
-        h1 { font-size: 2.5em; }
-        h2 { font-size: 1.75em;}
-        p { text-align: justify; margin-bottom: 1rem; line-height: 1.8; }
-        ul { list-style-type: disc; padding-left: 20px; margin-bottom: 1rem; }
-        img { max-width: 100%; height: auto; display: block; margin: 20px auto; border-radius: 8px; }
-        .testimonial { background-color: #e3f2fd; padding: 15px; margin-top: 20px; border-radius: 8px; font-style: italic; }
-        .contact-button { display: block; width: fit-content; margin: 20px auto; padding: 12px 24px; background-color: #00897b; color: white; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;}
-        .contact-button:hover { background-color: #00796b; }
-        .benefit-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); grid-gap: 20px; } /* Grid for benefits */
-        .benefit-list li { background-color: #e3f2fd; padding: 15px; border-radius: 8px; }
-        .highlight { color: #00897b; font-weight: bold; }
-        /* Responsive adjustments */
-        @media (max-width: 768px) { .container { padding: 10px; } h1 { font-size: 2em; } h2{font-size: 1.5em;} .benefit-list { grid-template-columns: 1fr; } } /* Stack on smaller screens */
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f8f9fa; 
+        }
+
+        /* Global Styles */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('hero-image.jpg'); /* Replace with your actual image */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 10rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background-color: #80CBC4; /* Teal */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            background-color: #4DB6AC;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 8rem 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .service {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .service h3 {
+            color: #80CBC4;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f8f9fa; 
+        }
+
+        .testimonial {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #80CBC4;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #80CBC4;
+            color: #fff;
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .contact h2 {
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f0f0f0;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero {
+                padding: 6rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Elevate Postpartum Care: Free Your Passion, Empower Your Practice</h1>
-            <h2>Imagine a world where you focus on what you love most: nurturing new families. Let us handle the rest.</h2>
-            <img src="placeholder-mother-baby.jpg" alt="Mother and Baby">
-        </header>
-        <main>
-            <section>
-                <p>As a dedicated <span class="highlight">Midwife/Doula/Nursing Agency</span>, you pour your heart and soul into providing exceptional care for new mothers. But the reality is often different. You're juggling schedules, managing paperwork, chasing payments, and facing endless administrative burdens.</p>
-                <p>This leaves you feeling overwhelmed, drained, and unable to fully focus on what matters most: providing compassionate, personalized support to your clients.</p>
-                <p>What if you could free yourself from these distractions? What if you could delegate the operational challenges to a trusted partner who understands your unique needs?</p>
-            </section>
-            <section>
-                <h2>We offer a suite of tailored solutions designed to streamline your operations and empower you to focus on what you do best.</h2>
-                <ul class="benefit-list">
-                    <li><span class="highlight">Streamlined Scheduling & Dispatch</span></li>
-                    <li><span class="highlight">Effortless Billing & Invoicing</span></li>
-                    <li><span class="highlight">Expert Client Onboarding & Support</span></li>
-                    <li><span class="highlight">Enhanced Client Communication</span></li>
-                    <li><span class="highlight">Increased Efficiency & Reduced Administrative Burden</span></li>
-                    <li><span class="highlight">Spend more time with your clients</span></li>
-                    <li><span class="highlight">Improve client satisfaction and loyalty</span></li>
-                    <li><span class="highlight">Scale your practice seamlessly</span></li>
-                    <li><span class="highlight">Achieve greater work-life balance</span></li>
-                    <li><span class="highlight">Grow your business with confidence</span></li>
-                </ul>
-            </section>
-            <section>
-              <h2>Ready to reclaim your time and elevate your practice?</h2>
-              <a href="mailto:info@example.com" class="contact-button">Schedule a Free Consultation</a>
-            </section>
-        </main>
-    </div>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Elevate Your Postpartum Practice</h1>
+            <p>Focus on nurturing families. We'll handle the operations.</p>
+            <a href="#contact" class="hero-cta">Schedule a Consultation</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-content">
+                    <h2>Free Yourself from Administrative Burdens</h2>
+                    <p>As a dedicated midwife, doula, or nursing agency, you're passionate about providing exceptional care. But administrative tasks can drain your time and energy. We offer tailored operational support solutions to streamline your workflows and empower you to focus on what matters most: your clients.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Our Solutions</h2>
+                </div>
+                <div class="services-grid">
+                    <div class="service">
+                        <h3>Streamlined Scheduling & Dispatch</h3>
+                        <p>Optimize nurse schedules, manage appointments efficiently, and ensure seamless communication.</p>
+                    </div>
+                    <div class="service">
+                        <h3>Effortless Billing & Invoicing</h3>
+                        <p>Automate billing processes, manage invoices with ease, and improve cash flow.</p>
+                    </div>
+                    <div class="service">
+                        <h3>Expert Client Onboarding & Support</h3>
+                        <p>Provide a smooth onboarding experience for new clients and offer ongoing support.</p>
+                    </div>
+                    <div class="service">
+                        <h3>Enhanced Client Communication</h3>
+                        <p>Improve communication with clients through automated reminders and updates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section testimonials">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>What Our Partners Say</h2>
+                </div>
+                <div class="testimonial">
+                    <p>"Working with [Your Company Name] has been a game-changer. I can now focus on what I love most – providing personalized care to my clients – without the constant stress of administrative tasks."</p>
+                    <p class="testimonial-author">- Jane Doe, [Organization Name]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2>Ready to Elevate Your Practice?</h2>
+                <p>Schedule a free consultation to discuss your specific needs.</p>
+                <a href="#contact" class="hero-cta">Schedule a Consultation</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
