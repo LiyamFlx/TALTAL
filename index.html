@@ -5,230 +5,258 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="TALTAL: Your Healthcare Hub. Find, Book, & Go.">
     <meta name="author" content="LiyamFlx">
-    <title>TALTAL: Your Healthcare Hub. Find, Book, & Go.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <title>TALTAL: Your Healthcare Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset */
-        *,
-        *::before,
-        *::after {
+        /* Root Variables */
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #1abc9c;
+            --text-color: #333;
+            --background-color: #f9f9f9;
+            --accent-color: #ffc107;
+            --font-family: 'Montserrat', sans-serif;
+        }
+
+        /* General Styles */
+        body {
+            font-family: var(--font-family);
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            min-height: 100vh;
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        /* Header & Menu */
+        header {
             display: flex;
-            flex-direction: column;
-            background-color: #f8f9fa; /* Soft Pink Background */
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: #fff;
         }
 
-        /* Global Styles */
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+            border-radius: 5px;
         }
 
         /* Hero Section */
         .hero {
-            background-color: #f48fb1; /* Vibrant Pink */
-            color: #fff;
             text-align: center;
-            padding: 10rem 0;
+            padding: 4rem 2rem;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: #fff;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
         }
 
         .hero p {
-            font-size: 1.4rem;
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 1.2rem;
+            margin: 1rem 0;
         }
 
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .search-bar input {
-            padding: 1.5rem 2rem;
-            border: none;
+        .hero .cta-button {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
             border-radius: 5px;
-            margin-right: 1rem;
-            flex-grow: 1; /* Allow input to take up available space */
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            text-transform: uppercase;
+            margin-top: 1rem;
         }
 
-        .search-button {
-            background-color: #fff; 
-            color: #f48fb1; /* Pink accent */
-            padding: 1.5rem 2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.2s ease-in-out;
-        }
-
-        .search-button:hover {
-            background-color: #f08080; /* Slightly darker pink on hover */
-        }
-
-        /* Features Section */
-        .features {
-            padding: 6rem 0;
-        }
-
-        .feature-row {
+        /* New Bond Section */
+        .new-bond {
+            padding: 4rem 2rem;
+            background-color: #fefefe;
+            border-top: 1px solid #e0e0e0;
             display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .new-bond .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
             justify-content: space-between;
-            flex-wrap: wrap; 
-            margin-bottom: 4rem;
         }
 
-        .feature {
-            background-color: #fff;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 2rem;
+        .new-bond .content {
+            flex: 2;
+            max-width: 600px;
         }
 
-        .feature img {
-            width: 50px;
+        .new-bond h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
 
-        /* Testimonials Section */
-        .testimonials {
-            background-color: #f8f9fa; 
-            padding: 6rem 0;
+        .new-bond p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
-        .testimonial {
-            background-color: #fff;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 4rem 0;
-            text-align: center;
+        .new-bond .features ul {
+            list-style: none;
+            padding: 0;
         }
 
-        /* Call to Action Section */
-        .call-to-action {
-            background-color: #f48fb1; /* Vibrant Pink */
+        .new-bond .features ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .new-bond .features ul li:before {
+            content: "✔️";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .new-bond .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
             color: #fff;
-            text-align: center;
-            padding: 6rem 0;
-        }
-
-        .cta-button {
-            background-color: #fff;
-            color: #f48fb1; /* Pink accent */
-            padding: 1.5rem 3rem;
-            border: none;
+            padding: 0.75rem 1.5rem;
+            text-transform: uppercase;
+            font-weight: 600;
             border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.2s ease-in-out;
+            transition: background-color 0.3s ease;
         }
 
-        .cta-button:hover {
-            background-color: #f08080; /* Slightly darker pink on hover */
+        .new-bond .cta-button:hover {
+            background-color: #e0a800;
+        }
+
+        .new-bond .consultants ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .new-bond .consultants ul li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .new-bond .consultants ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+            color: var(--secondary-color);
         }
 
         /* Footer */
         footer {
-            background-color: #f8f9fa; /* Soft Pink Background */
-            padding: 3rem 0;
+            background-color: var(--primary-color);
+            color: #fff;
             text-align: center;
+            padding: 2rem 1rem;
         }
 
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .hero {
-                padding: 6rem 0;
-            }
-
-            .feature-row {
-                flex-direction: column;
-                align-items: center;
-            }
+        footer a {
+            color: var(--accent-color);
         }
     </style>
 </head>
 <body>
-    <header class="hero">
-        <div class="container">
-            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvY2F0aW9uPSJIZWxwIiBzdGFuZGFsb25lPSltYW5hZ2VNdWx0aXBsZSAxLjAiPz48c3ZnIHhtbG5zPSJodHRwOi8v...[SVG content]...">
-            <h1>TALTAL: Your Healthcare Hub. Find, Book, & Go.</h1>
-            <p>Focus on nurturing families. We'll handle the operations.</p>
-            <div class="search-bar">
-                <input type="text" placeholder="Search for healthcare services...">
-                <button class="search-button">Search</button>
-            </div>
-        </div>
+    <!-- Header with Menu -->
+    <header>
+        <div class="logo">TALTAL</div>
+        <nav>
+            <a href="#new-bond">New Bond</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <main>
-        <section class="features">
-            <div class="container">
-                <div class="feature-row">
-                    <article class="feature">
-                        <img src="feature1.svg" alt="Feature 1">
-                        <h3>Streamlined Scheduling</h3>
-                        <p>Optimize nurse schedules, manage appointments efficiently, and ensure seamless communication.</p>
-                    </article>
-                    <article class="feature">
-                        <img src="feature2.svg" alt="Feature 2">
-                        <h3>Effortless Billing</h3>
-                        <p>Automate billing processes, manage invoices with ease, and improve cash flow.</p>
-                    </article>
-                    <article class="feature">
-                        <img src="feature3.svg" alt="Feature 3">
-                        <h3>Expert Client Support</h3>
-                        <p>Provide a smooth onboarding experience for new clients and offer ongoing support.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to TALTAL</h1>
+        <p>Your healthcare hub to find, book, and manage your practice.</p>
+        <a href="/signup" class="cta-button">Start Free Trial</a>
+    </section>
 
-        <section class="testimonials">
-            <div class="container">
-                <div class="section-heading">
-                    <h2>What Our Partners Say</h2>
-                </div>
-                <article class="testimonial">
-                    <p>"Working with TALTAL has been a game-changer. I can now focus on what I love most – providing personalized care to my clients – without the constant stress of administrative tasks."</p>
-                    <p class="testimonial-author">- Jane Doe, Healthcare Professional</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="call-to-action">
-            <div class="container">
-                <h2>Ready to Elevate Your Practice?</h2>
-                <p>Schedule a free consultation to discuss your specific needs.</p>
-                <a href="mailto:info@example.com" class="cta-button">Schedule a Consultation</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
+    <!-- New Bond Section -->
+    <section class="new-bond" id="new-bond">
         <div class="container">
-            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+            <div class="content">
+                <h2>Dear Mothers! 🌸</h2>
+                <p>
+                    We are excited to share with you our new project - <strong>New Bond</strong> - by <em>Yael Choraki</em>, 
+                    a personal and adapted accompaniment for new parents in their natural environment, 
+                    inspired by the Dutch <strong>Kremsorg</strong> service.
+                </p>
+                <p>
+                    Out of this inspiration, we created <strong>NEW BOND</strong>, so that here too, we can wrap you up in this significant and sensitive period.
+                </p>
+
+                <div class="features">
+                    <h3>💡 What does our basic package include?</h3>
+                    <ul>
+                        <li>✔️ 3 consecutive days of support after the birth (3 hours per session).</li>
+                        <li>✔️ Practical tools (temperature, increasing amounts of food, amount of feces, etc.), strengthening confidence, operative support that also includes moments of rest.</li>
+                        <li>✔️ Assistance in organizing the necessary equipment, order in the house, and even a first bath.</li>
+                        <li>✔️ Full availability on WhatsApp.</li>
+                    </ul>
+                </div>
+            </div>
+            <aside class="consultants">
+                <h3>🩺 Professional Support</h3>
+                <p>Our project is guided by a team of professional consultants, including:</p>
+                <ul>
+                    <li>A doctor</li>
+                    <li>A gynecologist</li>
+                    <li>A pelvic floor specialist</li>
+                    <li>An osteopath</li>
+                    <li>A lactation consultant</li>
+                    <li>A midwife</li>
+                </ul>
+            </aside>
         </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 TALTAL. All Rights Reserved.</p>
+        <a href="#top">Back to Top</a>
     </footer>
 </body>
 </html>
