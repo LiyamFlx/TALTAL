@@ -3,265 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TALTAL - Your Healthcare Hub. Find and book appointments with trusted doctors easily.">
-    <title>TALTAL: Your Healthcare Hub | Find & Book Healthcare Appointments</title>
-    
-    <!-- Preload critical assets -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <title>TALTAL: Your Healthcare Hub. Find, Book, & Go.</title>
     <style>
-        :root {
-            --primary-color: #4CAF50;
-            --text-color: #333;
-            --bg-light: #f8f9fa;
-            --white: #fff;
-            --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            --container-width: 1200px;
-            --spacing-sm: 1rem;
-            --spacing-md: 2rem;
-            --spacing-lg: 4rem;
-        }
-
-        /* Modern CSS Reset */
-        *, *::before, *::after {
+        /* Reset */
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
+            color: #333;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background-color: var(--bg-light);
+            background-color: #f8f9fa; /* Soft Pink Background */
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        button {
-            cursor: pointer;
-            font: inherit;
-        }
-
+        /* Global Styles */
         .container {
-            width: min(var(--container-width), 100% - var(--spacing-md));
-            margin-inline: auto;
-            padding: var(--spacing-lg) var(--spacing-md);
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
         }
 
+        /* Hero Section */
         .hero {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background-color: #f48fb1; /* Vibrant Pink */
+            color: #fff;
             text-align: center;
-            padding: clamp(4rem, 10vw, 8rem) 0;
+            padding: 10rem 0;
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            margin-bottom: var(--spacing-sm);
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
         }
 
         .hero p {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            max-width: 60ch;
-            margin-inline: auto;
+            font-size: 1.4rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .search-bar {
             display: flex;
-            gap: var(--spacing-sm);
-            max-width: 600px;
-            margin: var(--spacing-md) auto 0;
-            padding: 0 var(--spacing-sm);
+            justify-content: center;
+            margin-top: 2rem;
         }
 
         .search-bar input {
-            flex: 1;
-            padding: var(--spacing-sm) var(--spacing-md);
+            padding: 1.5rem 2rem;
             border: none;
             border-radius: 5px;
-            font: inherit;
+            margin-right: 1rem;
+            flex-grow: 1; /* Allow input to take up available space */
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
 
         .search-button {
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: var(--spacing-sm) var(--spacing-md);
+            background-color: #fff; 
+            color: #f48fb1; /* Pink accent */
+            padding: 1.5rem 2rem;
             border: none;
             border-radius: 5px;
-            font-weight: 600;
-            transition: opacity 0.2s;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
         }
 
         .search-button:hover {
-            opacity: 0.9;
+            background-color: #f08080; /* Slightly darker pink on hover */
         }
 
+        /* Features Section */
         .features {
-            padding: var(--spacing-lg) 0;
+            padding: 6rem 0;
         }
 
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-            gap: var(--spacing-lg);
-            margin-bottom: var(--spacing-lg);
+        .feature-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; 
+            margin-bottom: 4rem;
         }
 
         .feature {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
-            padding: var(--spacing-md);
+            margin-bottom: 2rem;
         }
 
         .feature img {
             width: 50px;
-            height: 50px;
-            margin: 0 auto var(--spacing-sm);
+            margin-bottom: 1rem;
         }
 
+        /* Testimonials Section */
         .testimonials {
-            background-color: var(--bg-light);
-            padding: var(--spacing-lg) 0;
+            background-color: #f8f9fa; 
+            padding: 6rem 0;
         }
 
         .testimonial {
-            background-color: var(--white);
-            padding: var(--spacing-lg);
+            background-color: #fff;
+            padding: 3rem;
             border-radius: 10px;
-            box-shadow: var(--shadow);
-            margin: var(--spacing-lg) 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 4rem 0;
             text-align: center;
-            max-width: 800px;
-            margin-inline: auto;
         }
 
+        /* Call to Action Section */
         .call-to-action {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background-color: #f48fb1; /* Vibrant Pink */
+            color: #fff;
             text-align: center;
-            padding: var(--spacing-lg) 0;
+            padding: 6rem 0;
         }
 
         .cta-button {
-            display: inline-block;
-            background-color: var(--white);
-            color: var(--primary-color);
+            background-color: #fff;
+            color: #f48fb1; /* Pink accent */
             padding: 1.5rem 3rem;
             border: none;
             border-radius: 5px;
             text-decoration: none;
-            font-weight: 700;
-            margin-top: var(--spacing-md);
-            transition: transform 0.2s;
+            font-weight: bold;
+            transition: background-color 0.2s ease-in-out;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
+            background-color: #f08080; /* Slightly darker pink on hover */
         }
 
+        /* Footer */
         footer {
-            background-color: var(--bg-light);
-            padding: var(--spacing-lg) 0;
+            background-color: #f8f9fa; /* Soft Pink Background */
+            padding: 3rem 0;
             text-align: center;
-            margin-top: auto;
         }
 
-        /* Improved accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .hero {
+                padding: 6rem 0;
             }
-        }
 
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --text-color: #f0f0f0;
-                --bg-light: #1a1a1a;
-                --white: #2a2a2a;
+            .feature-row {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
-</head>
 
-<body>
-    <header class="hero">
-        <div class="container">
-            <h1>TALTAL: Your Healthcare Hub</h1>
-            <p>Find, Book, & Go.</p>
-            <p>Book appointments with trusted doctors in one place.</p>
-            <form class="search-bar" role="search">
-                <input type="search" 
-                       placeholder="Search for doctors or specialties"
-                       aria-label="Search for doctors or specialties">
-                <button type="submit" class="search-button">Search</button>
-            </form>
-        </div>
-    </header>
+    <body>
 
-    <main>
-        <section class="features">
+        <header class="hero">
             <div class="container">
-                <div class="feature-grid">
-                    <article class="feature">
-                        <img src="images/icon-search.svg" alt="" aria-hidden="true">
-                        <h2>Find the Right Doctor</h2>
-                        <p>Browse verified doctor profiles, read patient reviews, and find specialists in your area.</p>
-                    </article>
-                    <article class="feature">
-                        <img src="images/icon-calendar.svg" alt="" aria-hidden="true">
-                        <h2>Book Appointments Instantly</h2>
-                        <p>Schedule appointments that fit your schedule, 24/7.</p>
-                    </article>
-                    <article class="feature">
-                        <img src="images/icon-location.svg" alt="" aria-hidden="true">
-                        <h2>Access Healthcare Anywhere</h2>
-                        <p>Find doctors near you or book telemedicine consultations.</p>
-                    </article>
-                    <article class="feature">
-                        <img src="images/icon-shield.svg" alt="" aria-hidden="true">
-                        <h2>Secure and Reliable</h2>
-                        <p>Your data is safe and secure with our robust privacy measures.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <div class="container">
-                <h2>What Our Users Say</h2>
-                <blockquote class="testimonial">
-                    <p>"Finding a good doctor was always a hassle. TALTAL made it so easy! I love how I can read reviews and book appointments online."</p>
-                    <footer>
-                        <cite>- John Doe</cite>
-                    </footer>
-                </blockquote>
-            </div>
-        </section>
-
-        <section class="call-to-action">
-            <div class="container">
-                <h2>Ready to Simplify Your Healthcare?</h2>
-                <a href="#" class="cta-button">Get Started Now</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; <time datetime="2024">2024</time> TALTAL. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvY2F0aW9uPSJIZWxwIiBzdGFuZGFsb25lPSltYW5hZ2VNdWx0aXBsZSAxLjAiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnLWV4dG1sIj4gPHRpdGxlPkljb24gTmFtZTwvTGl0bGU+IDxwYXRoIGQ9Ik0yMC42NjYgMjEuMjg0Yy0uMjI0IDAtLjQ0OC0uMDk0LS42NTItLjI4MS0uMjA0LS4xODctLjM0NC0uNDQzLS4zNDQtLjcwNCAwIC0uMjY0LjEyLS41MTguMzY0LS43NTkgLjI0NC0uMjQxLjU0OC0uMzkzLjkwOC0uMzkzIC4zNjAgMCA
